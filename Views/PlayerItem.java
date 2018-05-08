@@ -5,24 +5,24 @@ import javax.swing.table.DefaultTableModel;
 
 public class PlayerItem extends JTable {
 
-    public static void placeComponents(JFrame frame) {
+    public static void placeComponents(JPanel panel) {
 //        panel.setLayout(null);
 //
 //        JLabel PlayerLabel = new JLabel("运动员");
 //        PlayerLabel.setBounds(10, 20, 80, 25);
 //        panel.add(PlayerLabel);
 
-        frame.setTitle("JTable测试");
+//        frame.setTitle("JTable测试");
         String[] columnNames = { "火影", "风影", "雷影", "水影", "土影" };
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
 
         JTable jTable = new JTable(model);
 
         JScrollPane scrollPane = new JScrollPane(jTable);
-        frame.add(scrollPane);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
+        panel.add(scrollPane);
+//        panel.pack();
+//        fram.setVisible(true);
+
 
         // 获取JTable中的model
         DefaultTableModel model2 = (DefaultTableModel) jTable.getModel();
