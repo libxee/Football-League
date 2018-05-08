@@ -1,6 +1,7 @@
 package Views;
 
-public class InputGame {
+import javax.swing.*;
 
+public class InputGame {
 
 }
