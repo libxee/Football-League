@@ -1,7 +1,6 @@
 
 package Views;
 
-import Models.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +9,6 @@ public class FrontPage {
     private JFrame frame = new JFrame("League Management System");
 
     public void showFrontPage() {
-//        JFrame frame = new JFrame("League Management System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = new JPanel() {
             protected void paintComponent(Graphics g) {
@@ -25,11 +23,11 @@ public class FrontPage {
         };
 
         frame.add(panel);
-        Login login = new Login();
-        login.placeComponents(panel);
-        if (login.judgePassword()) {
-            PlayerItem.placeComponents(panel);
-        }
+//        Login login = new Login();
+//        login.placeComponents(panel);
+//        if (login.judgePassword()) {
+//            PlayerItem.placeComponents(panel);
+//        }
         frame.setVisible(true);
     }
 
@@ -63,7 +61,7 @@ public class FrontPage {
         ;
         new Login().placeComponents(p1);
         JPanel p2 = new JPanel();
-        PlayerItem.placeComponents(p2);
+        new PlayerItem().placeComponents(p2);
         JPanel p3 = new JPanel();
         jp.add("球队管理", p1);
         jp.add("球员管理", p2);

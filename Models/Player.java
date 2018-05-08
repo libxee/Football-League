@@ -1,18 +1,19 @@
 package Models;
 
 public class Player {
-    private String rollNo;
-    private String name;
+    private String player_id;
+    private String Player_name;
     public String getRollNo() {
-        return rollNo;
+        return player_id;
     }
     public void setRollNo(String rollNo) {
-        this.rollNo = rollNo;
+        this.player_id = rollNo;
     }
     public String getName() {
-        return name;
+        return Player_name;
     }
     public void setName(String name) {
-        this.name = name;
+        this.Player_name = name;
     }
+
 }
