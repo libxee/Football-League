@@ -1,6 +1,7 @@
 package Views;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,22 +18,20 @@ public class Login {
 //    }
 
     public void placeComponents(JPanel panel) {
-        panel.setLayout(null);
-
-        userLabel.setBounds(10, 20, 80, 25);
+//        panel.setSize(500, 300);
+        panel.setLayout(new FlowLayout(FlowLayout.CENTER));
+//        panel.setLayout(null);
+        userLabel.setFont(new java.awt.Font("Dialog", 1, 18));
+        userLabel.setForeground(Color.white);
         panel.add(userLabel);
-
-        userText.setBounds(100, 20, 165, 25);
         panel.add(userText);
 
-        passwordLabel.setBounds(10, 50, 80, 25);
+        passwordLabel.setFont(new java.awt.Font("Dialog", 1, 18));
+        passwordLabel.setForeground(Color.white);
         panel.add(passwordLabel);
 
-        passwordText.setBounds(100, 50, 165, 25);
         panel.add(passwordText);
 
-        // 创建登录按钮
-        loginButton.setBounds(10, 80, 80, 25);
         panel.add(loginButton);
     }
 

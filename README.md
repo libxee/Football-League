@@ -1,8 +1,8 @@
 ### Rate List
 
 A Simplle Football League Management System
----
 
+---
 #### Technology stack
 
 - Java
