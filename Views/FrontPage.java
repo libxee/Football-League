@@ -41,9 +41,12 @@ public class FrontPage {
         new PlayerItem().placeComponents(p2);
         JPanel p3 = new JPanel();
         new TeamList().placeComponents(p3);
+        JPanel p4 = new JPanel();
+        new Race().placeComponents(p4);
         jp.add("首页", p1);
         jp.add("球员管理", p2);
         jp.add("球队管理", p3);
+        jp.add("比赛成绩",p4);
         jf.add(jp, BorderLayout.CENTER);   //将选项卡窗体添加到 主窗体上去
     }
 }

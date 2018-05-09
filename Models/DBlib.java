@@ -7,7 +7,7 @@ import java.util.List;
 public class DBlib {
 
 
-    static final String DB_URL = "jdbc:mysql://119.29.235.55:3306/javaexp";
+    static final String DB_URL = "jdbc:mysql://119.29.235.55:3306/javaexp?useUnicode=true&characterEncoding=utf-8";
 
     static final String USER = "javaexp";
     static final String PASS = "gYEcAeFHOVMz8xPY";
@@ -46,13 +46,10 @@ public class DBlib {
                 String[] item = {String.valueOf(id), name, type_name, team_name, String.valueOf(team_id)};
                 list.add(item);
             }
-            // 完成后关闭
             rs.close();
         } catch (SQLException se) {
-            // 处理 JDBC 错误
             se.printStackTrace();
         } catch (Exception e) {
-            // 处理 Class.forName 错误
             e.printStackTrace();
         }
         return list;
@@ -70,21 +67,19 @@ public class DBlib {
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                int team_id = rs.getInt("team_id");
-                String type_name = rs.getString("team_name");
-                int win_count = rs.getInt("win_count");
-                int if_off = rs.getInt("if_offplays");
-                int integral = rs.getInt("integral");
-                String[] item = {String.valueOf(team_id),String.valueOf(integral),};
+//                int team_id = rs.getInt("team_id");
+//                String type_name = rs.getString("team_name");
+//                int win_count = rs.getInt("win_count");
+//                int if_off = rs.getInt("if_offplays");
+//                int integral = rs.getInt("integral");
+                String team_name = rs.getString("team_name");
+                String[] item = {team_name};
                 list.add(item);
             }
-            // 完成后关闭
             rs.close();
         } catch (SQLException se) {
-            // 处理 JDBC 错误
             se.printStackTrace();
         } catch (Exception e) {
-            // 处理 Class.forName 错误
             e.printStackTrace();
         }
         return list;
@@ -108,10 +103,8 @@ public class DBlib {
             stmt.close();
             conn.close();
         } catch (SQLException se) {
-            // 处理 JDBC 错误
             se.printStackTrace();
         } catch (Exception e) {
-            // 处理 Class.forName 错误
             e.printStackTrace();
         }
         return judger;
