@@ -38,7 +38,7 @@ public class FrontPage {
         };
         new Login().placeComponents(p1);
         JPanel p2 = new JPanel();
-        new PlayerItem().placeComponents(p2);
+        new PlayerList().placeComponents(p2);
         JPanel p3 = new JPanel();
         new TeamList().placeComponents(p3);
         JPanel p4 = new JPanel();

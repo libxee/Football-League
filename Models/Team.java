@@ -4,8 +4,9 @@ import java.util.List;
 
 public class Team {
 
-    public static void setTeam(String name) {
-        String sql = "INSERT INTO team_info (team_name) VALUES ('" + name + "')";
+    public static void setTeam(String name, String league) {
+        String sql = "INSERT INTO team_info (team_name,league) VALUES" +
+                " ('" + name + "','" + league + "')";
         DBlib.operateData(sql);
     }
 
@@ -23,6 +24,6 @@ public class Team {
     public static void main(String[] args) {
 //        updateTeam(1,1);
 //        getTeam();
-        setTeam("ffffff");
+        setTeam("ffffff","蛇皮联赛");
     }
 }

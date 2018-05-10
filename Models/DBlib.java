@@ -73,7 +73,8 @@ public class DBlib {
 //                int if_off = rs.getInt("if_offplays");
 //                int integral = rs.getInt("integral");
                 String team_name = rs.getString("team_name");
-                String[] item = {team_name};
+                String team_league = rs.getString("league");
+                String[] item = {team_league,team_name};
                 list.add(item);
             }
             rs.close();

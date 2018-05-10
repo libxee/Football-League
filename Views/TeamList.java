@@ -12,20 +12,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TeamList extends JTable {
-    private String[] columnNames = {"队名"};
+    private String[] columnNames = {"所属联赛","队名"};
     private DefaultTableModel model = new DefaultTableModel(columnNames, 0);
     private JTable jTable = new JTable(model);
     private JButton addButton = new JButton("添加球队信息");
-    //    private JLabel teamIdLabel = new JLabel("球队ID");
-//    private JTextField teamIdText = new JTextField(20);
+        private JLabel teamLeague = new JLabel("所属联赛");
+    private JTextField teamLeagueText = new JTextField(20);
     private JLabel teamName = new JLabel("队名");
     private JTextField teamNameText = new JTextField(20);
 
     public void placeComponents(JPanel panel) {
         JScrollPane scrollPane = new JScrollPane(jTable);
         panel.setLayout(new FlowLayout(FlowLayout.CENTER));
-//        panel.add(teamIdLabel);
-//        panel.add(teamIdText);
+        panel.add(teamLeague);
+        panel.add(teamLeagueText);
         panel.add(teamName);
         panel.add(teamNameText);
         panel.add(addButton);
@@ -40,12 +40,12 @@ public class TeamList extends JTable {
         }
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                String playerId = teamIdText.getText();
+                String teamLeague = teamLeagueText.getText();
                 String teamName = teamNameText.getText();
-                String[] data = {teamName};
+                String[] data = {teamLeague,teamName};
                 insertRow(data);
-                Team.setTeam(teamName);
-//                teamIdText.setText("");
+                Team.setTeam(teamName,teamLeague);
+                teamLeagueText.setText("");
                 teamNameText.setText("");
             }
         });

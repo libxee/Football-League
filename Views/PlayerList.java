@@ -8,8 +8,10 @@ import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.List;
 
-public class PlayerItem extends JTable {
+public class PlayerList extends JTable {
     private String[] columnNames = {"队员ID", "姓名", "位置", "进球数", "赛季总进球", "进球排名"};
     private DefaultTableModel model = new DefaultTableModel(columnNames, 0);
     private JTable jTable = new JTable(model);
@@ -30,15 +32,22 @@ public class PlayerItem extends JTable {
         panel.add(scrollPane);
         jTable.setPreferredScrollableViewportSize(new Dimension(800, 400));
 //        DefaultTableModel model2 = (DefaultTableModel) jTable.getModel();
-        String[] column1 = {"1", "fucker", "大前锋", "1", "10", "3"};
-        model.addRow(column1);
+//        String[] column1 = {"1", "fucker", "大前锋", "1", "10", "3"};
+//        model.addRow(column1);
+        List<String[]> list = Player.getPlayer();
+        for (int i = 0; i < list.size(); i++) {
+            String[] Trans = list.get(i);
+            System.out.println(Arrays.toString(list.get(i)));
+            model.addRow(list.get(i));
+        }
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String playerId = playerIdText.getText();
                 String playerName = playerNameText.getText();
                 String[] data = {playerId, playerName};
                 insertRow(data);
-                Player.setPlayer(playerName,"xxx","蛇皮队",1);
+                Player.setPlayer(playerName, "xxx", "蛇皮队", 1);
+//                Player.setPlayer(playerName, "xxx", "蛇皮队", 1);
                 playerIdText.setText("");
                 playerNameText.setText("");
             }
