@@ -24,6 +24,6 @@ public class Team {
     public static void main(String[] args) {
 //        updateTeam(1,1);
 //        getTeam();
-        setTeam("ffffff","蛇皮联赛");
+//        setTeam("ffffff","蛇皮联赛");
     }
 }
