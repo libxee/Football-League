@@ -75,7 +75,8 @@ public class DBlib {
                 String team_name = rs.getString("team_name");
                 String team_league = rs.getString("league");
                 int team_integral = rs.getInt("integral");
-                String[] item = {team_league,team_name, String.valueOf(team_integral)};
+                int off_integral = rs.getInt("off_integral");
+                String[] item = {team_league, team_name, String.valueOf(team_integral), String.valueOf(off_integral)};
                 list.add(item);
             }
             rs.close();

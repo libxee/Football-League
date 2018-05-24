@@ -20,6 +20,8 @@ public class PlayerList extends JTable {
     private JTextField playerIdText = new JTextField(20);
     private JLabel playerName = new JLabel("姓名");
     private JTextField playerNameText = new JTextField(20);
+    private JLabel playerTeam  = new JLabel("球队名");
+    private JTextField playerTeamId  = new JTextField(20);
 
     public void placeComponents(JPanel panel) {
         JScrollPane scrollPane = new JScrollPane(jTable);
@@ -29,6 +31,8 @@ public class PlayerList extends JTable {
         panel.add(playerName);
         panel.add(playerNameText);
         panel.add(addButton);
+        panel.add(playerTeam);
+        panel.add(playerTeamId);
         panel.add(scrollPane);
         jTable.setPreferredScrollableViewportSize(new Dimension(800, 400));
 //        DefaultTableModel model2 = (DefaultTableModel) jTable.getModel();
@@ -44,12 +48,14 @@ public class PlayerList extends JTable {
             public void actionPerformed(ActionEvent e) {
                 String playerId = playerIdText.getText();
                 String playerName = playerNameText.getText();
-                String[] data = {playerId, playerName};
+                String playerTeam = playerTeamId.getText();
+                String[] data = {playerId, playerName,"xx",playerTeam};
                 insertRow(data);
-                Player.setPlayer(playerName, "xxx", "蛇皮队", 1);
 //                Player.setPlayer(playerName, "xxx", "蛇皮队", 1);
+                Player.setPlayer(playerName, "xxx", playerTeam, 1);
                 playerIdText.setText("");
                 playerNameText.setText("");
+                playerTeamId.setText("");
             }
         });
     }

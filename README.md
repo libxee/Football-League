@@ -16,6 +16,8 @@ And we use the most ugly GUI tool Java Swing to build the most ugly page I have 
 
 _**以上均为吐槽,请勿当真,当真也行**_
 
+
+ ![](1.jpg)
 ---
 
 #### 以下为项目开发规范
