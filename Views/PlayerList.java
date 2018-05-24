@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PlayerList extends JTable {
-    private String[] columnNames = {"队员ID", "姓名", "位置", "进球数", "赛季总进球", "进球排名"};
+    private String[] columnNames = {"队员ID", "姓名", "位置", "球队", "球队ID", "进球数"};
     private DefaultTableModel model = new DefaultTableModel(columnNames, 0);
     private JTable jTable = new JTable(model);
     private JButton addButton = new JButton("添加球员信息");

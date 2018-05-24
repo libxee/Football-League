@@ -16,14 +16,11 @@ public class Team {
     }
 
     public static List<String[]> getTeam() {
-        List<String[]> list = DBlib.queryTeam("SELECT * FROM team_info");
+        List<String[]> list = DBlib.queryTeam("SELECT * FROM team_info ORDER BY integral DESC");
         return list;
     }
 
     //    test
     public static void main(String[] args) {
-//        updateTeam(1,1);
-//        getTeam();
-//        setTeam("ffffff","蛇皮联赛");
     }
 }
